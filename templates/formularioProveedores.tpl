@@ -1,14 +1,19 @@
-{include file="encabezado.tpl"}
+
 <div>
     <div class="container text-center">
-        <form class="row g-3 needs-validation" novalidate method="post" action="">
+        {if $opcion eq 'agregar'}
+            <h1>Agregue Proveedor Nuevo</h1>
+            <form class="row g-3 needs-validation" novalidate method="post" action="agregarproveedor">
+        {elseif $opcion eq 'editar'}
+            <h1>Editar Proveedor Existente</h1>
+            <form class="row g-3 needs-validation" novalidate method="post" action="editarproveedor/{$id}">
+        {/if}
             <div class="col-md-4 mx-auto"> 
                 {if $opcion eq 'agregar'}
-                    <h1>Agregue Proveedor Nuevo</h1>
-                    <label for="validationCustom01" class="form-label">Proveeedor nuevo:</label>
+                    <label for="validationCustom01" class="form-label">Ingrese:</label>
                 {elseif $opcion eq 'editar'}
                     <h1>Edite Proveedor Existente</h1>
-                    <label for="validationCustom01" class="form-label">Editar Proveeedor:</label>
+                    <label for="validationCustom01" class="form-label">Ingrese:</label>
                 {/if}
                 <input type="text" class="form-control" id="validationCustom01" value="" name="nombre" required>
             </div>
@@ -18,4 +23,5 @@
         </form>
     </div>
 </div>
-{include file="piePagina.tpl"}
+
+

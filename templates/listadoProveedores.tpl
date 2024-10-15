@@ -1,4 +1,5 @@
 {include file="encabezado.tpl"}
+    {include file="formularioProveedores.tpl"}
     <div class="container mt-5">
         <div class="row">
             {foreach from=$proveedores item=$proveedor}

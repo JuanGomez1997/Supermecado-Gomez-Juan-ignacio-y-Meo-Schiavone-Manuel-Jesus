@@ -1,29 +1,32 @@
 <?php
-/* Smarty version 4.2.1, created on 2024-10-15 08:14:39
+/* Smarty version 4.2.1, created on 2024-10-15 19:57:20
   from 'D:\cosa\htdocs\web2\TPE\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\templates\listadoProveedores.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_670e084f1f92b1_71060931',
+  'unifunc' => 'content_670ead00dddcd0_11363080',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0c9b4ff328d933bcbdfdc9a01b125d1515947122' => 
     array (
       0 => 'D:\\cosa\\htdocs\\web2\\TPE\\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\\templates\\listadoProveedores.tpl',
-      1 => 1728972877,
+      1 => 1729014998,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:encabezado.tpl' => 1,
+    'file:formularioProveedores.tpl' => 1,
     'file:piePagina.tpl' => 1,
   ),
 ),false)) {
-function content_670e084f1f92b1_71060931 (Smarty_Internal_Template $_smarty_tpl) {
+function content_670ead00dddcd0_11363080 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:encabezado.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+    <?php $_smarty_tpl->_subTemplateRender("file:formularioProveedores.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <div class="container mt-5">
         <div class="row">

@@ -38,3 +38,4 @@
             $query->execute([$id]);
         }
     }
+?>

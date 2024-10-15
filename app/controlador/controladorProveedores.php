@@ -5,13 +5,21 @@
     class ControladorProveedores{
         private $vistaProveedores;
         private $modeloProveedores;
+        private $modeloProductos;
         public function __construct() {
             $this->vistaProveedores = new VistaProveedores();
             $this->modeloProveedores = new ModeloProveedores();
+            $this->modeloProductos = new ModeloProductos();
         }
         public function listarProveedores() {
             $proveedor = $this->modeloProveedores->obtenerProveedores();
             $this->vistaProveedores->mostrarProveedores($proveedor);
+        }
+
+        public function listarProveedoresPorID($id) {
+            $proveedor = $this->modeloProveedores->obtenerProveedoresId($id);
+            $productos = $this->modeloProductos->obtenerProductosId($id);
+            $this->vistaProveedores->mostrarListaProductoPorProveedor($proveedor);
         }
 
         public function añadirProveedor(){
@@ -39,6 +47,7 @@
         }
 
         public function eliminarProveedor($id){
+            echo "ID recibido en controlador: $id<br>";
             try {
                 $this->modeloProveedores->eliminarProveedor($id);
                 header("Location: " . BASE_URL);
@@ -49,3 +58,4 @@
         }
 
     }
+?>

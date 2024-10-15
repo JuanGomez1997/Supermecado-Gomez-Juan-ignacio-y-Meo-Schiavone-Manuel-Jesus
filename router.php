@@ -12,6 +12,10 @@
     // determina que camino seguir según la acción
     switch ($params[0]) {
         case 'inicio'://se puede cambiar y poner el listado de productos
+            echo"inicio";
+        break;
+
+        case 'proveedores'://se puede cambiar y poner el listado de productos
             $Controller->listarProveedores();
             break;
         case 'agregarproveedor':
