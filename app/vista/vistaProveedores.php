@@ -11,6 +11,20 @@ require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
             $this->smarty->display('listadoProveedores.tpl');
         }
         
+        public function mostrarFormularioAgregarProveedor(){
+            $this->smarty->assign('opcion','agregar');
+            $this->smarty->display('formularioProveedores.tpl');
+        }
+
+        public function mostrarFormularioEditarProveedor(){
+            $this->smarty->assign('opcion','editar');
+            $this->smarty->display('formularioProveedores.tpl');
+        }
+
+        public function mostrarError($error){
+            $this->smarty->assign('error', $error);
+            $this->smarty->display('error.tpl');
+        }
     }
     
 ?>

@@ -6,9 +6,9 @@
                     <div class="card text-center">
                         <div class="card-body">
                             <h5 class="card-title">{$proveedor->nombre}</h5>
-                            <a href="editar_proveedor.php?id={$proveedor->id_proveedor}" class="btn btn-primary">Editar</a>
-                            <a href="eliminar_proveedor.php?id={$proveedor->id_proveedor}" class="btn btn-danger">Eliminar</a>
-                            <a href="eliminar_proveedor.php?id={$proveedor->id_proveedor}" class="btn btn-success">Ver Productos</a>
+                            <a href="editarproveedor/{$proveedor->id_proveedor}" class="btn btn-primary">Editar</a>
+                            <a href="eliminarproveedor/{$proveedor->id_proveedor}" class="btn btn-danger">Eliminar</a>
+                            <a href="proveedor/{$proveedor->id_proveedor}" class="btn btn-success">Ver Productos</a>
                         </div>
                     </div>
                 </div>

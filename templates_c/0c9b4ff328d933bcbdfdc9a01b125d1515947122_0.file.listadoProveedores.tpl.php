@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2024-10-14 20:10:56
+/* Smarty version 4.2.1, created on 2024-10-15 08:14:39
   from 'D:\cosa\htdocs\web2\TPE\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\templates\listadoProveedores.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_670d5eb0d2b344_35989953',
+  'unifunc' => 'content_670e084f1f92b1_71060931',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0c9b4ff328d933bcbdfdc9a01b125d1515947122' => 
     array (
       0 => 'D:\\cosa\\htdocs\\web2\\TPE\\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\\templates\\listadoProveedores.tpl',
-      1 => 1728929454,
+      1 => 1728972877,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:piePagina.tpl' => 1,
   ),
 ),false)) {
-function content_670d5eb0d2b344_35989953 (Smarty_Internal_Template $_smarty_tpl) {
+function content_670e084f1f92b1_71060931 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:encabezado.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <div class="container mt-5">
@@ -38,11 +38,11 @@ $_smarty_tpl->tpl_vars['proveedor']->do_else = false;
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['proveedor']->value->nombre;?>
 </h5>
-                            <a href="editar_proveedor.php?id=<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->id_proveedor;?>
+                            <a href="editarproveedor/<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->id_proveedor;?>
 " class="btn btn-primary">Editar</a>
-                            <a href="eliminar_proveedor.php?id=<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->id_proveedor;?>
+                            <a href="eliminarproveedor/<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->id_proveedor;?>
 " class="btn btn-danger">Eliminar</a>
-                            <a href="eliminar_proveedor.php?id=<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->id_proveedor;?>
+                            <a href="proveedor/<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->id_proveedor;?>
 " class="btn btn-success">Ver Productos</a>
                         </div>
                     </div>

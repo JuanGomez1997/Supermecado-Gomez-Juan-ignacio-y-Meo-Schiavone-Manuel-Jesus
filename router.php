@@ -11,10 +11,18 @@
 
     // determina que camino seguir según la acción
     switch ($params[0]) {
-        case 'inicio':
+        case 'inicio'://se puede cambiar y poner el listado de productos
             $Controller->listarProveedores();
             break;
-        
+        case 'agregarproveedor':
+            $Controller->añadirProveedor();
+            break;
+        case 'editarproveedor':
+            $Controller->editarProveedor($params[1]);
+            break;
+        case 'eliminarproveedor':
+            $Controller->eliminarProveedor($params[1]);
+            break;
         default:
             echo('404 Page not found');
             break;
