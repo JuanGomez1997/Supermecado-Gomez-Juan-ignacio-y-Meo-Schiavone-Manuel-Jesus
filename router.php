@@ -7,29 +7,35 @@
         $accion = $_GET['accion'];
     }
     $params = explode('/', $accion);
-    $Controller=new ControladorProveedores;
+    $ControladorProveedor=new ControladorProveedores;
 
     // determina que camino seguir según la acción
     switch ($params[0]) {
         case 'inicio'://se puede cambiar y poner el listado de productos
             echo"inicio";
         break;
-
+        /////////////////////////////////////////////////////////////////////////////desdes aca juan
         case 'proveedores'://se puede cambiar y poner el listado de productos
-            $Controller->listarProveedores();
+            $ControladorProveedor=new ControladorProveedores;
+            $ControladorProveedor->listarProveedores();
             break;
         case 'proveedoresporid'://se puede cambiar y poner el listado de productos
-            $Controller->listarProveedoresPorID($params[1]);
+            $ControladorProveedor=new ControladorProveedores;
+            $ControladorProveedor->listarProveedoresPorID($params[1]);
             break;
         case 'agregarproveedor':
-            $Controller->añadirProveedor();
+            $ControladorProveedor=new ControladorProveedores;
+            $ControladorProveedor->añadirProveedor();
             break;
         case 'editarproveedor':
-            $Controller->editarProveedor($params[1]);
+            $ControladorProveedor=new ControladorProveedores;
+            $ControladorProveedor->editarProveedor($params[1]);
             break;
         case 'eliminarproveedor':
-            $Controller->eliminarProveedor($params[1]);
+            $ControladorProveedor=new ControladorProveedores;
+            $ControladorProveedor->eliminarProveedor($params[1]);
             break;
+        ////////////////////////////////////////////////////////////////////////////Hasta aca juan
         default:
             echo('404 Page not found');
             break;

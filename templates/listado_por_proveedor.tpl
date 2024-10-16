@@ -1,7 +1,7 @@
 {include file="encabezado.tpl"}
     {include file="formularioProveedores.tpl"}
     {foreach from=$proveedores item=$proveedor}
-        <h2>Lista de producto por proveedor <span class="texto">{$proveedor->nombre}</span></h2>
+        <h3>Lista de producto por proveedor <span class="texto">{$proveedor->nombre}</span></h3>
     {/foreach}
     <table class="table">
         <thead>
