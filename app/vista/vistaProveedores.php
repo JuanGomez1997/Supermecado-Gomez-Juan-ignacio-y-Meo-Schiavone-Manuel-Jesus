@@ -14,9 +14,12 @@ require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
         
         
 
-        public function mostrarListaProductoPorProveedor($id){
+        public function mostrarListaProductoPorProveedor($id,$proveedores,$productos){
+            $this->smarty->assign('id',$id);
+            $this->smarty->assign('proveedores',$proveedores);
+            $this->smarty->assign('productos',$productos);
             $this->smarty->assign('opcion','editar');
-            $this->smarty->display('formularioProveedores.tpl');
+            $this->smarty->display('listado_por_proveedor.tpl');
         }
 
         public function mostrarError($error){

@@ -12,7 +12,6 @@
                 {if $opcion eq 'agregar'}
                     <label for="validationCustom01" class="form-label">Ingrese:</label>
                 {elseif $opcion eq 'editar'}
-                    <h1>Edite Proveedor Existente</h1>
                     <label for="validationCustom01" class="form-label">Ingrese:</label>
                 {/if}
                 <input type="text" class="form-control" id="validationCustom01" value="" name="nombre" required>

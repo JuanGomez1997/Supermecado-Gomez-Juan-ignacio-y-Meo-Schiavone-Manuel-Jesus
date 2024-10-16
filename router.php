@@ -18,6 +18,9 @@
         case 'proveedores'://se puede cambiar y poner el listado de productos
             $Controller->listarProveedores();
             break;
+        case 'proveedoresporid'://se puede cambiar y poner el listado de productos
+            $Controller->listarProveedoresPorID($params[1]);
+            break;
         case 'agregarproveedor':
             $Controller->añadirProveedor();
             break;

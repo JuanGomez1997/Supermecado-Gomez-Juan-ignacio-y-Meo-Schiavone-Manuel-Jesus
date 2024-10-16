@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2024-10-15 19:29:43
+/* Smarty version 4.2.1, created on 2024-10-16 02:04:10
   from 'D:\cosa\htdocs\web2\TPE\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\templates\encabezado.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_670ea687d3c1c4_44657898',
+  'unifunc' => 'content_670f02fadffad5_02108823',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c615e3798748eb24e2f95d0b20fc1f7fbd3fd736' => 
     array (
       0 => 'D:\\cosa\\htdocs\\web2\\TPE\\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\\templates\\encabezado.tpl',
-      1 => 1729013381,
+      1 => 1729037049,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_670ea687d3c1c4_44657898 (Smarty_Internal_Template $_smarty_tpl) {
+function content_670f02fadffad5_02108823 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +46,7 @@ function content_670ea687d3c1c4_44657898 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="agregarproveedor">Agregar Proveedor</a>
+                            <a class="nav-link active" aria-current="page" href="proveedores">Proveedores</a>
                         </li>      
                     </ul>
                 </div>

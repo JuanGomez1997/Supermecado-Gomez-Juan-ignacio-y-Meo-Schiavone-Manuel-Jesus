@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2024-10-15 19:57:20
+/* Smarty version 4.2.1, created on 2024-10-16 01:40:29
   from 'D:\cosa\htdocs\web2\TPE\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\templates\listadoProveedores.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_670ead00dddcd0_11363080',
+  'unifunc' => 'content_670efd6d8e4b79_07773802',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0c9b4ff328d933bcbdfdc9a01b125d1515947122' => 
     array (
       0 => 'D:\\cosa\\htdocs\\web2\\TPE\\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\\templates\\listadoProveedores.tpl',
-      1 => 1729014998,
+      1 => 1729035628,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:piePagina.tpl' => 1,
   ),
 ),false)) {
-function content_670ead00dddcd0_11363080 (Smarty_Internal_Template $_smarty_tpl) {
+function content_670efd6d8e4b79_07773802 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:encabezado.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <?php $_smarty_tpl->_subTemplateRender("file:formularioProveedores.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -45,7 +45,7 @@ $_smarty_tpl->tpl_vars['proveedor']->do_else = false;
 " class="btn btn-primary">Editar</a>
                             <a href="eliminarproveedor/<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->id_proveedor;?>
 " class="btn btn-danger">Eliminar</a>
-                            <a href="proveedor/<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->id_proveedor;?>
+                            <a href="proveedoresporid/<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->id_proveedor;?>
 " class="btn btn-success">Ver Productos</a>
                         </div>
                     </div>
