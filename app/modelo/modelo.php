@@ -15,7 +15,7 @@
           $tables = $query->fetchAll();
           if(count($tables) == 0) {
             $sql =<<<END
-            CREATE TABLE `productos` (
+                        CREATE TABLE `productos` (
               `id_producto` int(11) NOT NULL,
               `producto` text NOT NULL,
               `precio` decimal(11,2) NOT NULL,
@@ -50,10 +50,9 @@
             --
 
             INSERT INTO `proveedores` (`id_proveedor`, `nombre`) VALUES
-            (1, 'Carnes Tandil'),
+            (1, 'Carnes Azul'),
             (2, 'Avon'),
-            (9, 'Grido'),
-            (12, 'Avicola Pollo Hermanos');
+            (9, 'Grido');
 
             -- --------------------------------------------------------
 
@@ -72,7 +71,7 @@
             --
 
             INSERT INTO `usuarios` (`id_usuario`, `nombre`, `contrasenia`) VALUES
-            (1, 'webadmin', '1234');
+            (1, 'webadmin', '$2b$12\$hJLzoFf1I1lT3OOPnaYfguWWYFui7lrKXYUdfbyjGJMMUuLkrRUQm'); 
 
             --
             -- Índices para tablas volcadas
@@ -111,7 +110,7 @@
             -- AUTO_INCREMENT de la tabla `proveedores`
             --
             ALTER TABLE `proveedores`
-              MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+              MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
             --
             -- AUTO_INCREMENT de la tabla `usuarios`
@@ -132,7 +131,7 @@
             END;
             $this->db->query($sql);
           }
-        }
+        } // la contraseña hasheada es: $2b$12$hJLzoFf1I1lT3OOPnaYfguWWYFui7lrKXYUdfbyjGJMMUuLkrRUQm pero si no le poniaa el "\" me maracaba error
       }
 
  

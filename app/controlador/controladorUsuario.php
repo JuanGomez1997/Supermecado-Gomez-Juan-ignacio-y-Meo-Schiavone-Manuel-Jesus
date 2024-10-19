@@ -24,7 +24,7 @@
                 return;
             }
             $usuario = $this->ModeloUsuario->obtenerNombre($nombre);
-            var_dump($usuario);
+
             if ($usuario && password_verify($contrasenia, $usuario->contrasenia)) {
             
                 AutHelper::login($usuario);

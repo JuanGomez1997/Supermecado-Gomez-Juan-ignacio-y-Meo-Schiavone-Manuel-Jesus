@@ -1,6 +1,7 @@
 <?php 
     require_once './app/controlador/controladorProveedores.php';
     require_once './app/controlador/controladorUsuario.php';
+    require_once './app/controlador/controladorProductos.php';
     require_once './app/helpers/helperAut.php';
     define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -12,8 +13,9 @@
     // determina que camino seguir según la acción
     switch ($params[0]) {
         /////////////////////////////////////////////////////////////////////////////desdes aca juan
-        case 'inicio'://se puede cambiar y poner el listado de productos
-            echo"inicio";
+        case 'inicio':
+            $ControladorProducto=new ControladorProductos;
+            $ControladorProducto->listarProductos();
         break;
         
         case 'iniciosesion'://form ingreso 
@@ -50,7 +52,7 @@
             break;
         ////////////////////////////////////////////////////////////////////////////Hasta aca juan
         default:
-            $ControladorUsuario = new ControladorUsuario();
+            $ControladorUsuario=new ControladorUsuario;
             $ControladorUsuario->mostrar404();
             break;
     }
