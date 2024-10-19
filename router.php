@@ -28,7 +28,7 @@
             break;
         case 'cerrarsesion'://cerrar sesiom
             $ControladorUsuario=new ControladorUsuario;
-            $ControladorUsuario->serraSesion();
+            $ControladorUsuario->cerraSesion();
             break;
         case 'proveedores'://se puede cambiar y poner el listado de productos
             $ControladorProveedor=new ControladorProveedores;
@@ -52,7 +52,7 @@
             break;
         ////////////////////////////////////////////////////////////////////////////Hasta aca juan
         default:
-            $ControladorUsuario=new ControladorUsuario;
+         $ControladorUsuario=new ControladorUsuario;
             $ControladorUsuario->mostrar404();
             break;
     }
