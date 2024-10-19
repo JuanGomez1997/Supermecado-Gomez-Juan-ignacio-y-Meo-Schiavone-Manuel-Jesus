@@ -1,5 +1,7 @@
 <?php 
     require_once './app/controlador/controladorProveedores.php';
+    require_once './app/controlador/controladorUsuario.php';
+    require_once './app/helpers/helperAut.php';
     define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
     $accion = 'inicio'; //accion por defecto
@@ -7,14 +9,25 @@
         $accion = $_GET['accion'];
     }
     $params = explode('/', $accion);
-    $ControladorProveedor=new ControladorProveedores;
-
     // determina que camino seguir según la acción
     switch ($params[0]) {
+        /////////////////////////////////////////////////////////////////////////////desdes aca juan
         case 'inicio'://se puede cambiar y poner el listado de productos
             echo"inicio";
         break;
-        /////////////////////////////////////////////////////////////////////////////desdes aca juan
+        
+        case 'iniciosesion'://form ingreso 
+            $ControladorUsuario=new ControladorUsuario;
+            $ControladorUsuario->ingreso();
+            break;
+        case 'accesoSesion'://inicio de sesion
+            $ControladorUsuario=new ControladorUsuario;
+            $ControladorUsuario->accesoSesion();
+            break;
+        case 'cerrarsesion'://cerrar sesiom
+            $ControladorUsuario=new ControladorUsuario;
+            $ControladorUsuario->serraSesion();
+            break;
         case 'proveedores'://se puede cambiar y poner el listado de productos
             $ControladorProveedor=new ControladorProveedores;
             $ControladorProveedor->listarProveedores();
@@ -37,6 +50,7 @@
             break;
         ////////////////////////////////////////////////////////////////////////////Hasta aca juan
         default:
-            echo('404 Page not found');
+            $ControladorUsuario = new ControladorUsuario();
+            $ControladorUsuario->mostrar404();
             break;
     }

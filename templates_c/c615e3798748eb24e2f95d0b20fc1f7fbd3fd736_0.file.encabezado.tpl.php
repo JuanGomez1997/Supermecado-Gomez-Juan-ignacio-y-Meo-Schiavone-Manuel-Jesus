@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2024-10-16 09:34:14
+/* Smarty version 4.2.1, created on 2024-10-19 09:43:49
   from 'D:\cosa\htdocs\web2\TPE\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\templates\encabezado.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_670f6c76ac4ac2_92042773',
+  'unifunc' => 'content_6713633590a9d4_89265796',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c615e3798748eb24e2f95d0b20fc1f7fbd3fd736' => 
     array (
       0 => 'D:\\cosa\\htdocs\\web2\\TPE\\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\\templates\\encabezado.tpl',
-      1 => 1729064035,
+      1 => 1729323816,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_670f6c76ac4ac2_92042773 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6713633590a9d4_89265796 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +44,11 @@ function content_670f6c76ac4ac2_92042773 (Smarty_Internal_Template $_smarty_tpl)
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link text-light" href="proveedores">Proveedores</a>
-                    <!-- Agrega más enlaces aquí si lo necesitas -->
+                    <?php if ((isset($_smarty_tpl->tpl_vars['_SESSION']->value['id_usuario']))) {?>
+                        <a class="nav-link text-light" href="cerrarsesion">Cerrar Sesion</a>
+                    <?php } else { ?>
+                        <a class="nav-link text-light" href="iniciosesion">Iniciar Sesion</a>
+                    <?php }?>
                 </div>
             </div>
         </div>

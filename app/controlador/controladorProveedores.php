@@ -2,12 +2,14 @@
     require_once 'app/modelo/modeloProveedores.php';
     require_once 'app/vista/vistaProveedores.php';
     require_once 'app/modelo/modeloProductos.php';
+    require_once './app/helpers/helperAut.php';
 
     class ControladorProveedores{
         private $vistaProveedores;
         private $modeloProveedores;
         private $modeloProductos;
         public function __construct() {
+            AutHelper::verify();
             $this->vistaProveedores = new VistaProveedores();
             $this->modeloProveedores = new ModeloProveedores();
             $this->modeloProductos = new ModeloProductos();

@@ -1,5 +1,7 @@
 {include file="encabezado.tpl"}
-    {include file="formularioProveedores.tpl"}
+    {if isset($_SESSION['id_usuario'])}
+        {include file="formularioProveedores.tpl"}
+    {/if}
     <div class="container mt-5">
         <div class="row">
             {foreach from=$proveedores item=$proveedor}

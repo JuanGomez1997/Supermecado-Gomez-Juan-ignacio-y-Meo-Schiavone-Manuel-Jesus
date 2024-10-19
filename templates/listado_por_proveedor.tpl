@@ -1,5 +1,7 @@
 {include file="encabezado.tpl"}
-    {include file="formularioProveedores.tpl"}
+    {if isset($_SESSION['id_usuario'])} 
+        {include file="formularioProveedores.tpl"}
+    {/if}
     {foreach from=$proveedores item=$proveedor}
         <h3>Lista de producto por proveedor <span class="texto">{$proveedor->nombre}</span></h3>
     {/foreach}

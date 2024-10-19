@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2024-10-16 09:34:14
+/* Smarty version 4.2.1, created on 2024-10-19 10:56:02
   from 'D:\cosa\htdocs\web2\TPE\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\templates\listado_por_proveedor.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_670f6c769e42e3_81659529',
+  'unifunc' => 'content_6713742231b7c2_65109257',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6794e7aedadc0214b3c6acf52bea85e2f62a7d15' => 
     array (
       0 => 'D:\\cosa\\htdocs\\web2\\TPE\\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\\templates\\listado_por_proveedor.tpl',
-      1 => 1729064040,
+      1 => 1729323545,
       2 => 'file',
     ),
   ),
@@ -23,11 +23,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:piePagina.tpl' => 1,
   ),
 ),false)) {
-function content_670f6c769e42e3_81659529 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6713742231b7c2_65109257 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:encabezado.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <?php $_smarty_tpl->_subTemplateRender("file:formularioProveedores.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+    <?php if ((isset($_smarty_tpl->tpl_vars['_SESSION']->value['id_usuario']))) {?> 
+        <?php $_smarty_tpl->_subTemplateRender("file:formularioProveedores.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+    <?php }?>
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['proveedores']->value, 'proveedor');
 $_smarty_tpl->tpl_vars['proveedor']->do_else = true;

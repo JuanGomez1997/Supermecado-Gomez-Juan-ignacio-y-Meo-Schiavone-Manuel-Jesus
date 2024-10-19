@@ -20,7 +20,11 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link text-light" href="proveedores">Proveedores</a>
-                    <!-- Agrega más enlaces aquí si lo necesitas -->
+                    {if isset($_SESSION['id_usuario'])}
+                        <a class="nav-link text-light" href="cerrarsesion">Cerrar Sesion</a>
+                    {else}
+                        <a class="nav-link text-light" href="iniciosesion">Iniciar Sesion</a>
+                    {/if}
                 </div>
             </div>
         </div>

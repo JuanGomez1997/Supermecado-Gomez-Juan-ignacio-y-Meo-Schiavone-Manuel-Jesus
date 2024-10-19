@@ -9,6 +9,7 @@ require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
         public function mostrarProveedores($proveedores){
             $this->smarty->assign('proveedores',$proveedores);
             $this->smarty->assign('opcion','agregar');
+            $this->smarty->assign('_SESSION', $_SESSION);
             $this->smarty->display('listadoProveedores.tpl');
         }
         
@@ -19,6 +20,7 @@ require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
             $this->smarty->assign('proveedores',$proveedores);
             $this->smarty->assign('productos',$productos);
             $this->smarty->assign('opcion','editar');
+            $this->smarty->assign('_SESSION', $_SESSION);
             $this->smarty->display('listado_por_proveedor.tpl');
         }
 

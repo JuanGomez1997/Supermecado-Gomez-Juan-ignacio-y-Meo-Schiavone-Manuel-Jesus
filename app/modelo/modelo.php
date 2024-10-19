@@ -15,14 +15,14 @@
           $tables = $query->fetchAll();
           if(count($tables) == 0) {
             $sql =<<<END
-              CREATE TABLE `productos` (
-            `id_producto` int(11) NOT NULL,
-            `producto` text NOT NULL,
-            `precio` decimal(11,2) NOT NULL,
-            `categoria` text NOT NULL,
-            `fecha_vencimiento` date NOT NULL,
-            `marca` text NOT NULL,
-            `proveedor_id` int(11) NOT NULL
+            CREATE TABLE `productos` (
+              `id_producto` int(11) NOT NULL,
+              `producto` text NOT NULL,
+              `precio` decimal(11,2) NOT NULL,
+              `categoria` text NOT NULL,
+              `fecha_vencimiento` date NOT NULL,
+              `marca` text NOT NULL,
+              `proveedor_id` int(11) NOT NULL
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
             --
@@ -41,8 +41,8 @@
             --
 
             CREATE TABLE `proveedores` (
-            `id_proveedor` int(11) NOT NULL,
-            `nombre` text NOT NULL
+              `id_proveedor` int(11) NOT NULL,
+              `nombre` text NOT NULL
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
             --
@@ -51,7 +51,28 @@
 
             INSERT INTO `proveedores` (`id_proveedor`, `nombre`) VALUES
             (1, 'Carnes Tandil'),
-            (2, 'Avon');
+            (2, 'Avon'),
+            (9, 'Grido'),
+            (12, 'Avicola Pollo Hermanos');
+
+            -- --------------------------------------------------------
+
+            --
+            -- Estructura de tabla para la tabla `usuarios`
+            --
+
+            CREATE TABLE `usuarios` (
+              `id_usuario` int(11) NOT NULL,
+              `nombre` varchar(50) NOT NULL,
+              `contrasenia` varchar(500) NOT NULL
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+            --
+            -- Volcado de datos para la tabla `usuarios`
+            --
+
+            INSERT INTO `usuarios` (`id_usuario`, `nombre`, `contrasenia`) VALUES
+            (1, 'webadmin', '1234');
 
             --
             -- Índices para tablas volcadas
@@ -61,14 +82,20 @@
             -- Indices de la tabla `productos`
             --
             ALTER TABLE `productos`
-            ADD PRIMARY KEY (`id_producto`),
-            ADD KEY `proveedor_id` (`proveedor_id`);
+              ADD PRIMARY KEY (`id_producto`),
+              ADD KEY `proveedor_id` (`proveedor_id`);
 
             --
             -- Indices de la tabla `proveedores`
             --
             ALTER TABLE `proveedores`
-            ADD PRIMARY KEY (`id_proveedor`);
+              ADD PRIMARY KEY (`id_proveedor`);
+
+            --
+            -- Indices de la tabla `usuarios`
+            --
+            ALTER TABLE `usuarios`
+              ADD PRIMARY KEY (`id_usuario`);
 
             --
             -- AUTO_INCREMENT de las tablas volcadas
@@ -78,13 +105,19 @@
             -- AUTO_INCREMENT de la tabla `productos`
             --
             ALTER TABLE `productos`
-            MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+              MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
             --
             -- AUTO_INCREMENT de la tabla `proveedores`
             --
             ALTER TABLE `proveedores`
-            MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+              MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+            --
+            -- AUTO_INCREMENT de la tabla `usuarios`
+            --
+            ALTER TABLE `usuarios`
+              MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
             --
             -- Restricciones para tablas volcadas
@@ -94,7 +127,7 @@
             -- Filtros para la tabla `productos`
             --
             ALTER TABLE `productos`
-            ADD CONSTRAINT `proveedor_fk` FOREIGN KEY (`proveedor_id`) REFERENCES `proveedores` (`id_proveedor`);
+              ADD CONSTRAINT `proveedor_fk` FOREIGN KEY (`proveedor_id`) REFERENCES `proveedores` (`id_proveedor`);
             COMMIT;
             END;
             $this->db->query($sql);
