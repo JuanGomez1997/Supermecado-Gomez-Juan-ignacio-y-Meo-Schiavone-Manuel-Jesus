@@ -27,8 +27,8 @@
             $ControladorUsuario->accesoSesion();
             break;
         case 'cerrarsesion'://cerrar sesiom
-            $ControladorUsuario=new ControladorUsuario;
-            $ControladorUsuario->cerraSesion();
+            $ControladorUsuario = new ControladorUsuario;
+            $ControladorUsuario->cerrarSesion();
             break;
         case 'proveedores'://se puede cambiar y poner el listado de productos
             $ControladorProveedor=new ControladorProveedores;

@@ -36,7 +36,7 @@
             }
         }
 
-        public function serraSesion() {
+        public function cerrarSesion() {
             AutHelper::logout();
             header('Location: ' . BASE_URL.'proveedores');    
         }
