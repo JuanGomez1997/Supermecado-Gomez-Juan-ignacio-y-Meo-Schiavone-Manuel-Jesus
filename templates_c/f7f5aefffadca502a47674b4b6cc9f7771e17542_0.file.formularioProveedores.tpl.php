@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2024-10-16 09:34:14
+/* Smarty version 4.2.1, created on 2024-10-20 19:14:08
   from 'D:\cosa\htdocs\web2\TPE\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\templates\formularioProveedores.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_670f6c76b1eb86_60773545',
+  'unifunc' => 'content_67153a60ee7c49_93994745',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7f5aefffadca502a47674b4b6cc9f7771e17542' => 
     array (
       0 => 'D:\\cosa\\htdocs\\web2\\TPE\\Supermecado-Gomez-Juan-ignacio-y-Meo-Schiavone-Manuel-Jesus\\templates\\formularioProveedores.tpl',
-      1 => 1729064034,
+      1 => 1729444448,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_670f6c76b1eb86_60773545 (Smarty_Internal_Template $_smarty_tpl) {
+function content_67153a60ee7c49_93994745 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div>
     <div class="container text-center">
         <div class="form-card">
@@ -33,11 +33,7 @@ function content_670f6c76b1eb86_60773545 (Smarty_Internal_Template $_smarty_tpl)
 ">
             <?php }?>
                 <div class="col-md-4 mx-auto"> 
-                    <?php if ($_smarty_tpl->tpl_vars['opcion']->value == 'agregar') {?>
                         <label for="validationCustom01" class="form-label">Ingrese:</label>
-                    <?php } elseif ($_smarty_tpl->tpl_vars['opcion']->value == 'editar') {?>
-                        <label for="validationCustom01" class="form-label">Ingrese:</label>
-                    <?php }?>
                     <input type="text" class="form-control" id="validationCustom01" value="" name="nombre" required>
                 </div>
                 <div class="col-12 text-center"> 

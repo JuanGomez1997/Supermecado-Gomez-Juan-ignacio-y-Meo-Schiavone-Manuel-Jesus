@@ -1,5 +1,9 @@
 {include file="encabezado.tpl"}
 
+{if isset($_SESSION['id_usuario'])}
+    {include file="formularioProductos.tpl"}
+{/if}
+
 <div class="container mt-5">
     <div class="row">
         {foreach from=$articulos item=$articulo}
@@ -10,7 +14,10 @@
                         <p class="card-text text-muted" style="font-size: 1.1em;">
                             $ {$articulo->precio}
                         </p>
-                        <a href="#/{$articulo->id_producto}" class="btn btn-outline-success">Ver Productos</a>
+                        {if isset($_SESSION['id_usuario'])}
+                            <a href="eliminarproducto/{$articulo->id_producto}" class="btn btn-outline-danger">Eliminar</a>
+                        {/if}
+                        <a href="productosporid/{$articulo->id_producto}" class="btn btn-outline-success">Ver Producto</a>
                     </div>
                 </div>
             </div>

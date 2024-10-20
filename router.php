@@ -51,6 +51,22 @@
             $ControladorProveedor->eliminarProveedor($params[1]);
             break;
         ////////////////////////////////////////////////////////////////////////////Hasta aca juan
+        case 'agregarproducto'://form ingreso 
+            $ControladorProducto=new ControladorProductos;
+            $ControladorProducto->añadirProducto();
+            break;
+        case 'eliminarproducto'://form ingreso 
+             $ControladorProducto=new ControladorProductos;
+             $ControladorProducto->borrarProducto($params[1]);
+            break;
+        case 'productosporid'://form ingreso 
+                $ControladorProducto=new ControladorProductos;
+                $ControladorProducto->verProducto($params[1]);
+            break;    
+        case 'editarproducto':// 
+                $ControladorProducto=new ControladorProductos;
+                $ControladorProducto->editarProducto($params[1]);
+            break;
         default:
          $ControladorUsuario=new ControladorUsuario;
             $ControladorUsuario->mostrar404();

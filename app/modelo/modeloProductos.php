@@ -12,10 +12,26 @@
         }
         //obtengo los productos por ID
         public function obtenerProductosId($id){
-            $query=$this->db->prepare("SELECT * FROM productos JOIN proveedores ON productos.proveedor_id=proveedores.id_proveedor WHERE proveedor_id=?");
+            $query=$this->db->prepare("SELECT * FROM productos JOIN proveedores ON productos.proveedor_id=proveedores.id_proveedor WHERE productos.id_producto=?");
             $query->execute([$id]);
-            $productos=$query->fetchAll(PDO::FETCH_OBJ);
+            $productos=$query->fetchALL(PDO::FETCH_OBJ);
             return $productos;
+        }
+        // agregar productos
+        public function agregarProducto($producto , $precio , $categoria , $fecha_vencimiento , $marca , $proveedor_id){
+            $query=$this->db->prepare('INSERT INTO productos(producto , precio , categoria , fecha_vencimiento , marca , proveedor_id) VALUES (?,?,?,?,?,?)');
+            $query->execute([$producto , $precio , $categoria , $fecha_vencimiento , $marca , $proveedor_id]);
+            return $this->db->lastInsertId();
+        }
+        // actualizar productos
+        public function actualizarProducto( $productos , $precio , $categoria , $fecha_vencimiento , $marca , $proveedor_id , $id_producto){
+            $query=$this->db->prepare('UPDATE productos SET producto=?, precio=?, categoria=?, fecha_vencimiento=?, marca=?, proveedor_id=? WHERE productos.id_producto=?');
+            $query->execute([ $productos , $precio , $categoria , $fecha_vencimiento , $marca , $proveedor_id , $id_producto]);
+        }
+        // eliminar productos
+        public function eliminarProducto($id_producto){
+            $query=$this->db->prepare('DELETE FROM productos WHERE id_producto=?');
+            $query->execute([$id_producto]);
         }
 
     }
