@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2024 a las 19:46:46
+-- Tiempo de generación: 21-10-2024 a las 01:25:42
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -42,9 +42,14 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `producto`, `precio`, `categoria`, `fecha_vencimiento`, `marca`, `proveedor_id`) VALUES
-(1, 'Jabon Neutro', 51.00, 'higiene', '2028-10-12', 'Avon', 2),
-(2, 'Nalga', 501.00, 'Carne de vaca', '2024-10-31', 'Carnes Tandil', 1),
-(3, 'Shampoo Acme', 65.63, 'Higiene', '2032-10-07', 'Avon', 2);
+(1, 'Jabon Netro Plus', 59.00, 'higiene', '2025-12-30', 'Avon', 2),
+(2, 'Nalga Max', 5648.00, 'Carne', '2024-12-30', 'Carnes Tandil', 1),
+(3, 'Shampoo Acme', 65.63, 'Higiene', '2032-10-07', 'Avon', 2),
+(6, 'Helado Vlade medio kilo', 555.26, 'Helado', '2026-12-30', 'Grido', 9),
+(7, 'Pollo Entero', 1500.00, 'Pollo', '2025-12-20', 'Carnes Azul', 1),
+(8, 'Helado Palito Frutilla', 55.69, 'Helado', '2024-10-23', 'Grido', 9),
+(9, 'Aeromatizante de pisos Poet', 100.20, 'Limpieza', '2030-12-20', 'Poet', 16),
+(10, 'Jabon Liquido 3 litros', 2500.56, 'Limpieza', '2034-12-10', 'Ariel', 16);
 
 -- --------------------------------------------------------
 
@@ -64,7 +69,8 @@ CREATE TABLE `proveedores` (
 INSERT INTO `proveedores` (`id_proveedor`, `nombre`) VALUES
 (1, 'Carnes Azul'),
 (2, 'Avon'),
-(9, 'Grido');
+(9, 'Grido'),
+(16, 'Carlos Limpieza');
 
 -- --------------------------------------------------------
 
@@ -116,13 +122,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
