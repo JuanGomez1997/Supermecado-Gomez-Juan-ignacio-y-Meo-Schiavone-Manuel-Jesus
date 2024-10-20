@@ -2,22 +2,27 @@
     require_once './app/modelo/modeloProductos.php';
     require_once './app/vista/vistaProductos.php';
     require_once './app/helpers/helperAut.php';
+    require_once './app/modelo/modeloProveedores.php';
     class ControladorProductos{
         private $vistaProductos;
         private $modeloProductos;
+        private $modeloProveedores;
         public function __construct() {
             $this->vistaProductos = new VistaProductos();
             $this->modeloProductos = new ModeloProductos();
+            $this->modeloProveedores = new ModeloProveedores();
         }
         public function listarProductos() {
             AutHelper::init();
             $productos = $this->modeloProductos->obtenerProductos();
-            $this->vistaProductos->mostrarProductos($productos);
+            $proveeddores = $this->modeloProveedores->obtenerProveedores();
+            $this->vistaProductos->mostrarProductos($productos,$proveeddores);
         }
         public function verProducto($id){
             AutHelper::init();
             $productos = $this->modeloProductos -> obtenerProductosId($id);
-            $this->vistaProductos->mostrarProducto ($id,$productos);
+            $proveeddores = $this->modeloProveedores->obtenerProveedores();
+            $this->vistaProductos->mostrarProducto ($id,$productos,$proveeddores);
         }
         public function añadirProducto(){
             AutHelper::verify();

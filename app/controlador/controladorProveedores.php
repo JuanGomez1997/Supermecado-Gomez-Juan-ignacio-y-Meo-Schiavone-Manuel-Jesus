@@ -22,7 +22,7 @@
         public function listarProveedoresPorID($id) {
             AutHelper::init();
             $proveedores = $this->modeloProveedores->obtenerProveedoresId($id);
-            $productos = $this->modeloProductos->obtenerProductosId($id);
+            $productos = $this->modeloProductos->obtenerProductosPorProveedorId($id);
             $this->vistaProveedores->mostrarListaProductoPorProveedor($id,$proveedores,$productos);
         }
 

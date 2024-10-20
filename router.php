@@ -5,36 +5,36 @@
     require_once './app/helpers/helperAut.php';
     define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
-    $accion = 'inicio'; //accion por defecto
+    $accion = 'inicio'; 
     if (!empty($_GET['accion'])) {
         $accion = $_GET['accion'];
     }
     $params = explode('/', $accion);
-    // determina que camino seguir según la acción
+    
     switch ($params[0]) {
-        /////////////////////////////////////////////////////////////////////////////desdes aca juan
+        
         case 'inicio':
             $ControladorProducto=new ControladorProductos;
             $ControladorProducto->listarProductos();
         break;
         
-        case 'iniciosesion'://form ingreso 
+        case 'iniciosesion':
             $ControladorUsuario=new ControladorUsuario;
             $ControladorUsuario->ingreso();
             break;
-        case 'accesoSesion'://inicio de sesion
+        case 'accesoSesion':
             $ControladorUsuario=new ControladorUsuario;
             $ControladorUsuario->accesoSesion();
             break;
-        case 'cerrarsesion'://cerrar sesiom
+        case 'cerrarsesion':
             $ControladorUsuario = new ControladorUsuario;
             $ControladorUsuario->cerrarSesion();
             break;
-        case 'proveedores'://se puede cambiar y poner el listado de productos
+        case 'proveedores':
             $ControladorProveedor=new ControladorProveedores;
             $ControladorProveedor->listarProveedores();
             break;
-        case 'proveedoresporid'://se puede cambiar y poner el listado de productos
+        case 'proveedoresporid':
             $ControladorProveedor=new ControladorProveedores;
             $ControladorProveedor->listarProveedoresPorID($params[1]);
             break;
@@ -50,20 +50,20 @@
             $ControladorProveedor=new ControladorProveedores;
             $ControladorProveedor->eliminarProveedor($params[1]);
             break;
-        ////////////////////////////////////////////////////////////////////////////Hasta aca juan
-        case 'agregarproducto'://form ingreso 
+        
+        case 'agregarproducto': 
             $ControladorProducto=new ControladorProductos;
             $ControladorProducto->añadirProducto();
             break;
-        case 'eliminarproducto'://form ingreso 
+        case 'eliminarproducto':
              $ControladorProducto=new ControladorProductos;
              $ControladorProducto->borrarProducto($params[1]);
             break;
-        case 'productosporid'://form ingreso 
+        case 'productosporid':
                 $ControladorProducto=new ControladorProductos;
                 $ControladorProducto->verProducto($params[1]);
             break;    
-        case 'editarproducto':// 
+        case 'editarproducto':
                 $ControladorProducto=new ControladorProductos;
                 $ControladorProducto->editarProducto($params[1]);
             break;

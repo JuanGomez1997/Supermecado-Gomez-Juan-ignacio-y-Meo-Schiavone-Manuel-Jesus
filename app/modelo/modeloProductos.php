@@ -17,6 +17,13 @@
             $productos=$query->fetchALL(PDO::FETCH_OBJ);
             return $productos;
         }
+        //obtengo producto por proveedor
+        public function obtenerProductosPorProveedorId($proveedor_id) {
+            $query = $this->db->prepare("SELECT * FROM productos WHERE proveedor_id = ?");
+            $query->execute([$proveedor_id]);
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        }
+
         // agregar productos
         public function agregarProducto($producto , $precio , $categoria , $fecha_vencimiento , $marca , $proveedor_id){
             $query=$this->db->prepare('INSERT INTO productos(producto , precio , categoria , fecha_vencimiento , marca , proveedor_id) VALUES (?,?,?,?,?,?)');
